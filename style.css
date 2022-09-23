@@ -1,0 +1,288 @@
+body { 
+    background: #fff;
+    color: #1c1e21;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.34;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar, .container, .footer {
+    width: 95%;
+    max-width: 1195px;
+    margin: 0 auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    opacity: 0.98;
+    z-index: 999;
+}
+
+.navbar {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.messenger-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    color: inherit;
+    text-decoration: none;
+    padding: 3px 0;
+}
+
+.nav-link:hover {
+    border-bottom: 3px solid #0a7cff;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: #595959;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.leftContainer, .rightContainer {
+    display: inline-block;
+    width: 50%;
+}
+
+.innerContainer {
+    width: 440px;
+}
+
+.title {
+    background-image: linear-gradient(83.84deg, #0088FF -6.87%, #A033FF 26.54%, #FF5C87 58.58%); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 66px;
+    margin: 25px 0;
+}
+
+.description {
+    color: #595959;
+}
+
+.form-input {
+    margin: 35px 0;
+}
+
+.inputElement {
+    box-sizing: border-box;
+    display: block;
+    width: 320px;
+    height: 36px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .04);
+    font-size: 1em;
+    padding: 0 15px;
+    margin-bottom: 12px;
+}
+
+.inputElement::placeholder {
+    color: #595959;
+    opacity: 0.6;
+}
+
+.inputElement:focus {
+    outline: 1px solid #0a7cff;
+}
+
+button[type="submit"] {
+    background-color: #0a7cff;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 12px 20px;   
+}
+
+.forgot-password {
+    color: #0a7cff;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.signedIn {
+    font-size: 12px;
+    margin: 35px 0;  
+}
+
+.appStoreImg {
+    width: 122px;
+    height: 44px;
+    margin-right: 10px;
+}
+
+.appStoreImg:last-child {
+    margin-right: unset;
+}
+
+.messengerChat {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 65px;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.meta-logo {
+    width: 150px;
+    height: auto;
+}
+
+@media(max-width:1024px) {
+    .leftContainer, .rightContainer {
+        width: 100%;
+    }
+    .title {
+        font-size: 45px;
+    }
+    .inputElement {
+        width: 100%;
+    }
+    .rightContainer {
+        overflow: hidden;
+        margin-top: 50px;
+    }
+    .footer {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .footer div {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media(max-width:768px) {
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:first-child {
+        transform: translateY(4px) rotate(45deg);
+    }
+    .hamburger.active .bar:last-child {
+        transform: translateY(-4px) rotate(-45deg);
+    }
+    .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        left: -100%;
+        margin: 0;
+        padding: 0;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-item {
+        background-color: #fafafa;
+        padding: 25px 0;
+    }
+    .nav-link {
+        display: block;
+        width: 95%;
+        margin: auto;
+    }
+    .nav-link:hover {
+        border: none;
+    }
+    .container.hidden, .footer.hidden {
+        visibility: hidden;
+    }
+}
+
+@media (min-width:481px) and (max-width:1024px) {
+    .innerContainer {
+        margin: 0 auto;
+    }
+    .title, .description {
+        text-align: center;
+    }
+    .form-input{
+        margin-top: 75px;
+    }
+    .messengerChat {
+        width: 440px;
+        height: auto;
+    }
+}
+
+@media(max-width: 480px) {
+    .navbar, .nav-link, .container, .footer {
+        width: 85%;
+    }
+    .innerContainer {
+        width: unset;
+    }
+    .messengerChat {
+        width: 130%;
+    }
+    .footer-links {
+        flex-direction: column;
+        margin: 10px auto;
+    }
+    .link {
+        margin: auto;
+    }
+}
